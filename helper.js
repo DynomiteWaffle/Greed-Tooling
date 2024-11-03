@@ -23,7 +23,7 @@ function genButtons(functions) {
         b.innerText = loop
         b.addEventListener('click', () => {
             element();
-            logDetailedLog(n+" button pressed, score "+log[log.length-1])
+            logDetailedLog("button "+n+" pressed, score "+log[log.length-1])
         });
         document.getElementById("buttons").appendChild(b)
     });
