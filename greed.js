@@ -33,7 +33,8 @@ function init() {
         },
         // 4
         function () {
-            newRun()
+            // newRun()
+            setScore(0)
         },
         // 5
         function () {

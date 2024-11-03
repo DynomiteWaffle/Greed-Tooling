@@ -3,9 +3,36 @@ let numbers = []
 let numberLog = [0]
 let run = 0
 // imports game function
-function getRules() {
+async function getRules() {
     // TODO load remote js
-    // TODO if remote fails load default
+    // console.log(document.getElementById("jsSrc").value)
+    if (document.getElementById("jsSrc").value.length == 0) {
+        document.getElementById("jsSrc").value = 'https://raw.githubusercontent.com/DynomiteWaffle/Greed-Tooling/refs/heads/main/greed.js'
+    }
+
+
+    let message
+    try {
+        const res = await fetch(document.getElementById("jsSrc").value)
+        message = res
+    } catch {
+        // bad res
+        console.log("failed getting file")
+    }
+    // file not js
+    if (message.headers.get('content-type') == 'application/javascript') {
+        eval(await message.text())// run js
+    } else {
+        console.log("not js file trying anyway")
+        // try anyway because github doesn't have good headers
+        try {
+            eval(await message.text())// run prob js
+        } catch {
+            console.log("not js file")
+            return
+        }
+        
+    }
     init() //initilize new rules
     document.getElementById("start").hidden = true
     document.getElementById("game").hidden = false
