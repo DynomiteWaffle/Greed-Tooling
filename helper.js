@@ -18,6 +18,7 @@ async function getRules() {
     } catch {
         // bad res
         console.log("failed getting file")
+        return
     }
     // file not js
     if (message.headers.get('content-type') == 'application/javascript') {
