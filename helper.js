@@ -49,6 +49,7 @@ function genButtons(functions) {
         const n = loop
         let b = document.createElement("button")
         b.innerText = loop
+        b.className = "DiceButton"
         b.addEventListener('click', () => {
             element();
             logDetailedLog("button "+n+" pressed, score "+log[log.length-1])
