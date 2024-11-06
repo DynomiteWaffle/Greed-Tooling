@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<header>
-    <style></style>
+
+<head>
+    <meta meta name="viewport" content="width=device-width, user-scalable=no" />
     <script src="helper.js"></script>
     <link rel="stylesheet" href="index.css">
-</header>
+</head>
+
 <body>
-    <div class="horzcon" id="game" hidden>  
+    <div class="horzcon" id="game" hidden>
         <div class="virtcon">
-        <div class="horzcon">
-            <div id="spacer"></div>
-            <div class="virtcon">
-                <p>Score</p>
-                <p class="info" id="score"></p>
-                <P>Run</P>
-                <p class="info" id="run"></p>
-                <button class="info" onclick="undo()">undo</button>
-                <button class="info" onclick="newRun()">New Run</button>
+            <div class="horzcon">
+                <div id="spacer"></div>
+                <div class="virtcon">
+                    <p>Score</p>
+                    <p class="info" id="score"></p>
+                    <P>Run</P>
+                    <p class="info" id="run"></p>
+                    <button class="info" onclick="undo()">undo</button>
+                    <button class="info" onclick="newRun()">New Run</button>
+                </div>
+                <div id="spacer"></div>
+                <div class="virtcon" id="buttons"></div>
+                <div id="spacer"></div>
+
             </div>
-            <div id="spacer"></div>
-            <div class="virtcon" id="buttons"></div>
-            <div id="spacer"></div>
-
+            <p id="log"></p>
         </div>
-        <p id="log"></p>
     </div>
-</div>
 
 
-<div class="start" id="start">
-    <input type="text" id="jsSrc"></input>
-    <button id="getRules" onclick="getRules()">get rules</button>
-</div>
+    <div class="start" id="start">
+        <input type="text" id="jsSrc"></input>
+        <button id="getRules" onclick="getRules()">get rules</button>
+    </div>
 </body>
