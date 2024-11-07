@@ -35,7 +35,7 @@ p {
 }
 
 .start {
-    visibility:unset;
+    visibility: unset;
     margin: auto;
     width: 50%;
     display: flex;
