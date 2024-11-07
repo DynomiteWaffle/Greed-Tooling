@@ -12,7 +12,6 @@ p {
 #game {
     font-size: 300%;
     margin: auto;
-    touch-action: manipulation;
 }
 
 #spacer {
@@ -36,7 +35,6 @@ p {
 }
 
 .start {
-    touch-action: manipulation;
     visibility: unset;
     margin: auto;
     width: 50%;
