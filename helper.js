@@ -6,8 +6,15 @@ let run = 0
 async function getRules() {
     // TODO load remote js
     // console.log(document.getElementById("jsSrc").value)
+    let params = new URLSearchParams(document.location.search);
+    const url = params.get("rules")
+
     if (document.getElementById("jsSrc").value.length == 0) {
-        document.getElementById("jsSrc").value = 'https://raw.githubusercontent.com/DynomiteWaffle/Greed-Tooling/refs/heads/main/greed.js'
+        if (!url == null) {
+            document.getElementById("jsSrc").value = url
+        } else {
+            document.getElementById("jsSrc").value = 'https://raw.githubusercontent.com/DynomiteWaffle/Greed-Tooling/refs/heads/main/greed.js'
+        }
     }
 
 
@@ -32,7 +39,7 @@ async function getRules() {
             console.log("not js file")
             return
         }
-        
+
     }
     init() //initilize new rules
     document.getElementById("start").hidden = true
@@ -52,7 +59,7 @@ function genButtons(functions) {
         b.className = "DiceButton"
         b.addEventListener('click', () => {
             element();
-            logDetailedLog("button "+n+" pressed, score "+log[log.length-1])
+            logDetailedLog("button " + n + " pressed, score " + log[log.length - 1])
         });
         document.getElementById("buttons").appendChild(b)
     });
@@ -64,14 +71,14 @@ function undo() {
     // remove 1 if 1 can be removed
     if (log.length > 1) {
         p = log.pop()
-        logDetailedLog("Undo, now run "+(run)+" score "+log[log.length-1])
+        logDetailedLog("Undo, now run " + (run) + " score " + log[log.length - 1])
     }
-    if (p == 0 && log.length >0) { run-- }//undo a run
+    if (p == 0 && log.length > 0) { run-- }//undo a run
     updateVisuals()
 
 }
 function newRun() {
-    logDetailedLog("New run, now run "+(run+2))
+    logDetailedLog("New run, now run " + (run + 2))
     run++
     log[log.length] = 0
     updateVisuals()
@@ -82,7 +89,7 @@ function setScore(score) {
     updateVisuals()// update html info
 }
 function score() {
-    return log[log.length-1]
+    return log[log.length - 1]
 }
 
 function updateVisuals() {
@@ -93,6 +100,6 @@ function updateVisuals() {
 //Detailed Log
 function logDetailedLog(message) {
     let log = document.getElementById("log").innerText
-    document.getElementById("log").innerText = message +"\n"+log
+    document.getElementById("log").innerText = message + "\n" + log
 }
 
