@@ -3,21 +3,25 @@ let numbers = []
 let numberLog = [0]
 let run = 0
 
+function tryParamGame() {
+    // startup pram game
+
+    let params = new URLSearchParams(document.location.search);
+    let url = params.get("rules")
 
 
 
-// startup pram game
+    if (url == null) { return }
 
-let params = new URLSearchParams(document.location.search);
-const url = params.get("rules")
 
-if (!url == "") {
+
     document.getElementById("jsSrc").value = url
     getRules()
 }
 
 // imports game function
 async function getRules() {
+
     if (document.getElementById("jsSrc").value.length == 0) {
         document.getElementById("jsSrc").value = 'https://raw.githubusercontent.com/DynomiteWaffle/Greed-Tooling/refs/heads/main/greed.js'
     }
