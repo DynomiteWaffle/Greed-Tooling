@@ -2,19 +2,24 @@ let log = [0]
 let numbers = []
 let numberLog = [0]
 let run = 0
+
+
+
+
+// startup pram game
+
+let params = new URLSearchParams(document.location.search);
+const url = params.get("rules")
+
+if (!url == "") {
+    document.getElementById("jsSrc").value = url
+    getRules()
+}
+
 // imports game function
 async function getRules() {
-    // TODO load remote js
-    // console.log(document.getElementById("jsSrc").value)
-    let params = new URLSearchParams(document.location.search);
-    const url = params.get("rules")
-
     if (document.getElementById("jsSrc").value.length == 0) {
-        if (!url == null) {
-            document.getElementById("jsSrc").value = url
-        } else {
-            document.getElementById("jsSrc").value = 'https://raw.githubusercontent.com/DynomiteWaffle/Greed-Tooling/refs/heads/main/greed.js'
-        }
+        document.getElementById("jsSrc").value = 'https://raw.githubusercontent.com/DynomiteWaffle/Greed-Tooling/refs/heads/main/greed.js'
     }
 
 
