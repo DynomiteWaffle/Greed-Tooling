@@ -1,65 +1,53 @@
-function init() {
-    let dice = [
-        // 1
-        function () {
-            if (run >= 2) {
-                add(100)
-            }
-            else {
-                add(1)
-            }
-            
-        },
-        // 2
-        function () {
-            if (run >= 1) {
-                // doubble or 2
-                if (score() == 0) {
-                    add(2)
-                } else {
-                    let s = score()
-                    s*=2
-                    setScore(s)
-                }
-            }
-            else
-            {
-                add(2)
-            }
-        },
-        // 3
-        function() {
-            add(3)
-        },
-        // 4
-        function () {
-            // newRun()
-            setScore(0)
-        },
-        // 5
-        function () {
-            if (run >= 2) {
-                add(50)
-            }
-            else {
-                add(5)
-            }
-        },
-        // 6
-        function () {
-            add(6)
-        },
-    ]
-    genButtons(dice)
-   
-}
+dice = [
+    // 1
+    function () {
+        if (game >= 2) {
+            score += 100
+        }
+        else {
+            score += 1
+        }
 
-function add(num) {
-    let s = score()
-    s+=num
-    setScore(s)
-}
- 
+    },
+    // 2
+    function () {
+        if (game >= 1) {
+            // doubble or 2
+            if (score == 0) {
+                score += 2
+            } else {
+
+                score *= 2
+            }
+        }
+        else {
+            score += 2
+        }
+    },
+    // 3
+    function () {
+        score += 3
+    },
+    // 4
+    function () {
+        run++
+        score = 0
+    },
+    // 5
+    function () {
+        if (game >= 2) {
+            score += 50
+        }
+        else {
+            score += 5
+        }
+    },
+    // 6
+    function () {
+        score += 6
+    },
+]
+
 /*
 round 0 4 kills
 round 1 2 doubles
