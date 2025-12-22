@@ -4,34 +4,36 @@
     <meta meta name="viewport" content="user-scalable=no, inital-scale=1" />
     <script src="helper.js"></script>
     <link rel="stylesheet" href="index.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
-    <div class="horzcon" id="game" hidden>
-        <div class="virtcon">
-            <div class="horzcon">
-                <div id="spacer"></div>
-                <div class="virtcon">
-                    <p>Score</p>
-                    <p class="info" id="score"></p>
-                    <P>Run</P>
-                    <p class="info" id="run"></p>
-                    <button class="info" onclick="undo()">undo</button>
-                    <button class="info" onclick="newRun()">New Run</button>
-                </div>
-                <div id="spacer"></div>
-                <div class="virtcon" id="buttons"></div>
-                <div id="spacer"></div>
+    <!-- <p id="title">GREED</p> -->
+    <p id="score">test</p>
+    <div class="gameinfo">
+        <p class="nopad">Game</p>
+        <p class="nopad" id="game">test</p>
+        <p class="nopad">Run</p>
+        <p class="nopad" id="run">test</p>
+    </div>
+    <p style="grid-row: 7;" class="spacer">.</p>
 
-            </div>
-            <p id="log"></p>
-        </div>
+    <div id="gameButtons">
+        <button onclick="undo()">Undo</button>
+        <button onclick="newGame();buttonPressed();">Game</button>
+        <button onclick="newRun();buttonPressed();">Run</button>
+    </div>
+    <p style="grid-row: 11;" class="spacer">.</p>
+    <div id="diceButtons">
+        <button onclick="dice[0]();buttonPressed();">1</button>
+        <button onclick="dice[1]();buttonPressed();">2</button>
+        <button onclick="dice[2]();buttonPressed();">3</button>
+        <button onclick="dice[3]();buttonPressed();">4</button>
+        <button onclick="dice[4]();buttonPressed();">5</button>
+        <button onclick="dice[5]();buttonPressed();">6</button>
     </div>
 
-
-    <div class="start" id="start">
-        <input type="text" id="jsSrc" placeholder="Leave Blank For Default Rules or Enter JS URL"></input>
-        <button id="getRules" onclick="getRules()">get rules</button>
-        <script> tryParamGame()</script>
-    </div>
+    <p style="grid-row: 18;" class="spacer">.</p>
 </body>
