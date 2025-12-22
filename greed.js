@@ -30,8 +30,12 @@ dice = [
     },
     // 4
     function () {
-        run++
-        score = 0
+        if (score == 0) {
+            score += 4
+        } else {
+            run++
+            score = 0
+        }
     },
     // 5
     function () {

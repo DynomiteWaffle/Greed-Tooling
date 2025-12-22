@@ -1,63 +1,25 @@
+body {
+    display: inline-grid;
+    grid-template-columns: 33.333333vw 33.333333vw 33.333333vw;
+    /* grid-template-rows: 33.333333vw 33.333333vw 33.333333vw 33.333333vw; */
+}
+
+html,
+body {
+    margin: 0
+}
+
+
+div {
+    display: contents;
+
+
+}
+
+div#spacer {
+    color: rebeccapurple;
+}
+
 button {
-    font-size: 100%;
-    margin: 0.2em;
-    width: 5em;
-    height: 5em
-}
-
-p {
-    margin: auto;
-}
-
-#game {
-    font-size: 300%;
-    margin: auto;
-}
-
-#spacer {
-    flex-grow: 2;
-}
-
-
-.horzcon {
-    visibility: inherit;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex: 1;
-}
-
-.virtcon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-}
-
-.start {
-    visibility: unset;
-    margin: auto;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center
-}
-
-#jsSrc {
-    visibility: inherit;
-    font-size: 200%;
-    height: 6em;
-    margin-bottom: 10%;
-    word-break: break-word;
-    word-break: break-all;
-}
-
-#getRules {
-    visibility: inherit;
-    margin: auto;
-    width: 75%;
-}
-
-[hidden] {
-    display: none;
+    aspect-ratio: 1/1;
 }
