@@ -10,22 +10,25 @@
 </head>
 
 <body>
-    <div id="title"></div>
-    <div class="v">
-        <p id="score">test</p>
-        <div class="h">
-            <p id="game">test</p>
-            <p id="run">test</p>
-        </div>
+    <p id="title">GREED</p>
+    <p id="score">test</p>
+    <div class="game">
+        <p class="nopad">Game</p>
+        <p class="nopad" id="game">test</p>
     </div>
-    <div id="spacer"></div>
-    <div class="h">
+    <div class="run">
+        <p class="nopad">Run</p>
+        <p class="nopad" id="run">test</p>
+    </div>
+    <p style="grid-row: 7;" class="spacer">.</p>
+
+    <div id="gameButtons">
         <button onclick="undo()">Undo</button>
         <button onclick="newGame();buttonPressed();">Game</button>
         <button onclick="newRun();buttonPressed();">Run</button>
     </div>
-    <div id="spacer"></div>
-    <div class="v">
+    <p style="grid-row: 11;" class="spacer">.</p>
+    <div id="diceButtons">
         <button onclick="dice[0]();buttonPressed();">1</button>
         <button onclick="dice[1]();buttonPressed();">2</button>
         <button onclick="dice[2]();buttonPressed();">3</button>
@@ -33,5 +36,6 @@
         <button onclick="dice[4]();buttonPressed();">5</button>
         <button onclick="dice[5]();buttonPressed();">6</button>
     </div>
-    <div id="spacer"></div>
+
+    <p style="grid-row: 19;" class="spacer">.</p>
 </body>

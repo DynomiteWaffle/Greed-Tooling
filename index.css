@@ -1,7 +1,12 @@
 body {
-    display: inline-grid;
-    grid-template-columns: 33.333333vw 33.333333vw 33.333333vw;
+    display: grid;
+    /* grid-template-columns: repeat(1fr, 10); */
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-rows: repeat(1fr, 19); */
+    /* grid-template-rows: 2fr 4fr 1fr 1fr 3fr 1fr 6fr 1fr; */
+    /* grid-template-columns: 33.333333vw 33.333333vw 33.333333vw; */
     /* grid-template-rows: 33.333333vw 33.333333vw 33.333333vw 33.333333vw; */
+    grid: repeat(5.555555556%, 18) / repeat(11.111111111%, 9);
 }
 
 html,
@@ -11,15 +16,76 @@ body {
 
 
 div {
-    display: contents;
-
-
+    display: inherit;
 }
 
-div#spacer {
-    color: rebeccapurple;
+.spacer {
+    grid-row: span 1;
+    grid-column: 1/10;
+    background-color: lightgray;
+    /* color: gray; */
+    text-indent: -100%;
+    margin: 0;
 }
 
 button {
     aspect-ratio: 1/1;
+    /* font-size: 330.33333333%; */
+    /* width: fit-content; */
+    font-size: 4vh;
+}
+
+#score {
+    grid-row: 3/span 3;
+    grid-column: 1/span 9;
+    /* place-self: center stretch; */
+    text-align: end;
+    font-size: 440.444444444%;
+    /* line-height: 100%; */
+    /* background-color: blueviolet; */
+    margin: 0;
+    padding-right: 0.1em;
+}
+
+.game {
+    grid-row: 6;
+    grid-column: 1/span 4;
+    grid-auto-flow: column;
+    justify-items: center;
+}
+
+.run {
+    grid-row: 6;
+    grid-column: 6/span 4;
+    grid-auto-flow: column;
+    justify-items: center;
+}
+
+#gameButtons {
+    grid-row: 8/span 3;
+    grid-column: 1/span 9;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#diceButtons {
+    grid-row: 12/span 6;
+    grid-column: 1/span 9;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#title {
+    grid-row: 1/span 2;
+    grid-column: 1/10;
+    background-color: lightgray;
+    text-align: center;
+    /* line-height: 100%; */
+    font-size: 220.2222222%;
+    margin: 0;
+    font-weight: bold;
+
+}
+
+.nopad {
+    padding: 0;
+    margin: 0;
 }
